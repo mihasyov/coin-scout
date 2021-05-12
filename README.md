@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Coin Scout App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**_Coin Scout_** is cryptocurrency app which is represent price changes over different periods of time. You can add cryptocurrency to the watch list by clicking on the _Add Coin_ button.The list is saved in Local Storage, so you can safely refresh the page and the same list will be displayed.
+
+Used technologies:
+
+- React
+- Redux, redux-thunk
+- React-router-dom
+- Axios
+- Chart.js
+
+## Demo
+
+Main Page
+![alt text](demo/main.png "Main Page")
+
+Chart Page
+![alt text](demo/chart.png "Chart Page")
 
 ## Available Scripts
 
