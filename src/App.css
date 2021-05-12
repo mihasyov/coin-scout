@@ -1,38 +1,211 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #9ebaf5;
+}
+
+.list-page {
+  width: 80vw;
+  height: 90vh;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #3f4a62, -5px -5px 15px #fdffff;
+  overflow: hidden;
+}
+
+.app-header {
+  margin: 10px 0 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.app-header span {
+  font-weight: 600;
+  color: rgb(235, 79, 79);
+}
+
+.dropdown {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.btn,
+.btn-history {
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  background: #9ebaf5;
+  box-shadow: 3px 3px 14px #3f4a62, -3px -3px 14px #fdffff;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  cursor: pointer;
+  color: #eee;
+}
+
+.btn:not(.active):hover {
+  animation: 1s ease-in pulse infinite;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  height: 300px;
+  width: 200px;
+  padding: 0 5px;
+  background: #c9daff;
+  border-radius: 5px;
+  overflow-y: scroll;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-item:hover {
+  font-weight: 600;
+}
+
+.line {
+  height: 1px;
+  background: rgba(192, 192, 192, 0.5);
+  box-shadow: 5px 5px 12px #3f4a62, -5px -5px 12px #fdffff;
+  margin-bottom: 25px;
+}
+
+.app-status {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.coins-list {
+  padding: 0 10px;
+  max-height: calc(100% - 160px);
+  overflow-y: scroll;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list::-webkit-scrollbar {
+  width: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list::-webkit-scrollbar-track {
+  box-shadow: inset 2px 2px 4px #869ed0, inset -2px -2px 4px #b6d6ff;
+  border-radius: 50px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #81a2e9;
+  box-shadow: inset -2px -2px 4px #7e97cc, inset 2px 2px 4px #b6d6ff;
+}
+
+.coin-item {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  height: 70px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  background: #9ebaf5;
+  color: #3f4a62;
+  box-shadow: inset 5px 5px 15px #3f4a62, inset -5px -5px 15px #fdffff;
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.coin-image {
+  width: 50px;
+  margin-left: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.coin-name,
+.delete-icon {
+  opacity: 0;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.coin-name {
+  left: 60px;
+}
+
+.text-success {
+  color: #26a100;
+}
+
+.text-danger {
+  color: #ff0000;
+}
+
+.fas.fa-sort-up,
+.fas.fa-sort-down {
+  margin-right: 5px;
+}
+
+.fas.fa-sort-up {
+  vertical-align: middle;
+}
+
+.delete-icon {
+  color: #ff0000;
+  right: 0px;
+}
+
+.coin-item:hover .coin-name {
+  left: 25px;
+  opacity: 1;
+}
+
+.coin-item:hover .delete-icon {
+  opacity: 1;
+  right: 25px;
+}
+
+@keyframes pulse {
+  0% {
+    color: #eee;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    color: #fff;
+    letter-spacing: 1px;
   }
+  100% {
+    color: #eee;
+  }
+}
+/* ------------------------------------------ */
+/*                  CHART PAGE                */
+.chart-page a {
+  display: inline-block;
+  padding: 5px 20px;
+  margin-bottom: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 18px;
+  background: #9ebaf5;
+  box-shadow: inset 5px 5px 10px #7e95c4, inset -5px -5px 10px #bedfff;
+}
+
+.chart-page a:hover {
+  color: #fff;
+}
+.chart-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn-history.active {
+  box-shadow: inset 5px 5px 10px #7e95c4, inset -5px -5px 10px #bedfff;
+  color: #fff;
 }
